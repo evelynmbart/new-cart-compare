@@ -27,7 +27,6 @@ export function AddPage({
   const [showStoreSuggestions, setShowStoreSuggestions] = useState(false);
   const [showItemSuggestions, setShowItemSuggestions] = useState(false);
 
-  // Get unique stores and items
   const { stores, items, storeFuse, itemFuse } = useMemo(() => {
     const uniqueStores = Array.from(
       new Set(entries.map((entry) => entry.store))
@@ -49,7 +48,6 @@ export function AddPage({
     };
   }, [entries]);
 
-  // Get filtered suggestions
   const storeSuggestions = useMemo(() => {
     if (!store) return stores;
     return storeFuse.search(store).map((result) => result.item);
@@ -60,7 +58,6 @@ export function AddPage({
     return itemFuse.search(item).map((result) => result.item);
   }, [item, items, itemFuse]);
 
-  // Handle input changes with suggestions
   const handleStoreChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setStore(e.target.value);
     setShowStoreSuggestions(true);

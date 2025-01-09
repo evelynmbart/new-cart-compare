@@ -4,7 +4,6 @@ import { AddPage } from "./components/AddPage";
 import { BrowsePage } from "./components/BrowsePage";
 import { Page, PriceEntry } from "./types";
 
-// Seed data for testing
 const seedData: PriceEntry[] = [
   {
     id: "1",
@@ -167,7 +166,7 @@ function App() {
   return (
     <div className="app-container">
       <header>
-        <h1>Grocery Price Tracker</h1>
+        <h1>Cart Compare</h1>
         <nav>
           <button
             className={currentPage === "add" ? "active" : ""}
