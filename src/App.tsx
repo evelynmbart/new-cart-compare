@@ -4,116 +4,7 @@ import { AddPage } from "./components/AddPage";
 import { BrowsePage } from "./components/BrowsePage";
 import { Page, PriceEntry } from "./types";
 
-const seedData: PriceEntry[] = [
-  {
-    id: "1",
-    store: "Publix",
-    item: "Carrots",
-    price: 2.99,
-    quantity: 2,
-    unit: "lb",
-    date: "2024-01-15T12:00:00Z",
-  },
-  {
-    id: "2",
-    store: "Walmart",
-    item: "Carrots",
-    price: 2.49,
-    quantity: 2,
-    unit: "lb",
-    date: "2024-01-20T12:00:00Z",
-  },
-  {
-    id: "3",
-    store: "Kroger",
-    item: "Carrots",
-    price: 1.99,
-    quantity: 1,
-    unit: "lb",
-    date: "2024-02-01T12:00:00Z",
-  },
-  {
-    id: "4",
-    store: "Publix",
-    item: "Milk",
-    price: 4.99,
-    quantity: 1,
-    unit: "each",
-    date: "2024-01-15T12:00:00Z",
-  },
-  {
-    id: "5",
-    store: "Walmart",
-    item: "Milk",
-    price: 3.99,
-    quantity: 1,
-    unit: "each",
-    date: "2024-01-25T12:00:00Z",
-  },
-  {
-    id: "6",
-    store: "Kroger",
-    item: "Milk",
-    price: 4.49,
-    quantity: 1,
-    unit: "each",
-    date: "2024-02-01T12:00:00Z",
-  },
-  {
-    id: "7",
-    store: "Publix",
-    item: "Bananas",
-    price: 2.49,
-    quantity: 3,
-    unit: "lb",
-    date: "2024-01-10T12:00:00Z",
-  },
-  {
-    id: "8",
-    store: "Walmart",
-    item: "Bananas",
-    price: 1.99,
-    quantity: 3,
-    unit: "lb",
-    date: "2024-01-20T12:00:00Z",
-  },
-  {
-    id: "9",
-    store: "Kroger",
-    item: "Bananas",
-    price: 2.29,
-    quantity: 3,
-    unit: "lb",
-    date: "2024-01-30T12:00:00Z",
-  },
-  {
-    id: "10",
-    store: "Publix",
-    item: "Bread",
-    price: 3.99,
-    quantity: 1,
-    unit: "each",
-    date: "2024-01-15T12:00:00Z",
-  },
-  {
-    id: "11",
-    store: "Walmart",
-    item: "Bread",
-    price: 2.99,
-    quantity: 1,
-    unit: "each",
-    date: "2024-01-25T12:00:00Z",
-  },
-  {
-    id: "12",
-    store: "Kroger",
-    item: "Bread",
-    price: 3.49,
-    quantity: 1,
-    unit: "each",
-    date: "2024-02-01T12:00:00Z",
-  },
-];
+const seedData: PriceEntry[] = [];
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>("add");
@@ -130,13 +21,13 @@ function App() {
     }
 
     // Merge seed data with existing entries, avoiding duplicates
-    const seedIds = new Set(seedData.map((entry) => entry.id));
-    const filteredExistingEntries = existingEntries.filter(
-      (entry) => !seedIds.has(entry.id)
-    );
+    // const seedIds = new Set(seedData.map((entry) => entry.id));
+    // const filteredExistingEntries = existingEntries.filter(
+    //   (entry) => !seedIds.has(entry.id)
+    // );
 
-    setEntries([...seedData, ...filteredExistingEntries]);
-    setIsLoading(false);
+    // setEntries([...seedData, ...filteredExistingEntries]);
+    // setIsLoading(false);
   }, []);
 
   // Save entries to localStorage whenever they change
